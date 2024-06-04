@@ -9,4 +9,4 @@ services:
       - portainer-data:/data
 
 volumes:
-  portainer-data
+  portainer-data:
