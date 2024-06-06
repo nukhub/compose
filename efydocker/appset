@@ -1,0 +1,2 @@
+    "DefaultConnection": "Server=mssql;Database=AppProd;MultipleActiveResultSets=true;Trusted_Connection=True;",
+    "SecurityConnection": "Server=mssql;Database=AppProdSecurity;MultipleActiveResultSets=true;Trusted_Connection=True;"
