@@ -1,0 +1,32 @@
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: "mssql"
+    restart: always
+    ports:
+      
+"1433:1433"
+  volumes:
+    
+sqldata:/var/opt/mssql
+environment:
+ACCEPT_EULA=Y
+MSSQL_SA_PASSWORD=passwourd1!
+TZ=Europe/Paris
+
+efy:
+  image: efy:klem
+  container_name: "efy"
+
+
+    ports:
+      
+"5000:80"
+"5001:443"
+depends_on:
+mssql
+environment:
+TZ=Europe/Paris
+
+volumes:
+  sqldata:
