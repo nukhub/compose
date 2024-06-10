@@ -3,8 +3,10 @@ WORKDIR /App
 
 # Copy everything
 COPY . ./
+
 # Restore as distinct layers
 RUN dotnet restore InSitu -r linux-x64
+
 # Build and publish a release
 RUN dotnet publish InSitu -c Release -o out -r linux-x64 --self-contained false --no-restore
 
