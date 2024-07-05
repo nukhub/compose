@@ -1,2 +1,0 @@
-    "DefaultConnection": "Server=efydb;Database=AppProd;MultipleActiveResultSets=true;User Id=sa;Password=passwourd1!;",
-    "SecurityConnection": "Server=efydb;Database=AppProdSecurity;MultipleActiveResultSets=true;User Id=sa;Password=passwourd1!;"
