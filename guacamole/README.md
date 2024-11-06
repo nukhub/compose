@@ -11,5 +11,5 @@ docker run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > initd
 docker exec -i guacamole_db mysql --user=guacamole_user --password=Azerty1+ guacamole_db < initdb.sql
 ```
 ```
-http://IP:8080/guacamole/#/
+http://IP:8080/guacamole/#/ (guacadmin/guacadmin)
 ```
