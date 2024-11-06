@@ -1,0 +1,46 @@
+services:
+    guacamole_db:
+        container_name: guacamole_db
+        hostname: guacamole_db
+        image: mariadb:10.11
+        restart: always
+        volumes:
+            - ./guacamole_db:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=change-me-root-password
+            - MYSQL_DATABASE=guacamole_db
+            - MYSQL_USER=guacamole_user
+            - MYSQL_PASSWORD=Azerty1+
+        expose:
+            - 3306
+    
+    guacd:
+        container_name: guacd
+        hostname: guacd
+        image: guacamole/guacd:latest
+        restart: always
+        volumes:
+            - ./guacd_drive:/drive:rw 
+            - ./guacd_record:/record:rw 
+        expose:
+            - 4822
+
+    guacamole:
+        container_name: guacamole
+        hostname: guacamole
+        restart: always
+        image: guacamole/guacamole:latest
+        depends_on:
+            - guacamole_db
+            - guacd
+        ports:
+            - 8080:8080
+        links:
+            - guacd
+        environment:
+            - GUACD_HOSTNAME=guacd
+            - MYSQL_HOSTNAME=guacamole_db
+            - MYSQL_DATABASE=guacamole_db
+            - MYSQL_USER=guacamole_user
+            - MYSQL_PASSWORD=Azerty1+
+            - REMOTE_IP_VALVE_ENABLED=true
