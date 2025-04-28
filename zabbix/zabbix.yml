@@ -72,3 +72,18 @@ services:
       - zabbix-db
       - zabbix-server
     stop_grace_period: 10s
+
+  # serveur mail
+  zabbix-mail:
+    container_name: zabbix-mail
+    image: catatnight/postfix
+    restart: always
+    ports:
+      - 25/25
+    environment:
+      maildomain: mail.domain.com
+      smtp_user: user:password
+    depends_on:
+      - zabbix-db
+      - zabbix-server
+    stop_grace_period: 10s
