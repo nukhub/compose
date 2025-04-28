@@ -13,5 +13,5 @@ pour la config de l'agent sur le server (debian)
 ```
 ```
 monitoring du reste :
-pour les autres agents, mettre l'IP du server (debian) (pas celle du container)
+pour les autres agents, mettre l'IP de la machine (pas celle du container)
 ```
