@@ -79,7 +79,7 @@ services:
     image: catatnight/postfix
     restart: always
     ports:
-      - 25/25
+      - 25:25
     environment:
       maildomain: mail.domain.com
       smtp_user: user:password
