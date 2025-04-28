@@ -3,6 +3,9 @@ wget https://raw.githubusercontent.com/nukhub/compose/main/zabbix/zabbix.yml
 wget https://raw.githubusercontent.com/nukhub/compose/main/zabbix/.env
 ```
 ```
+docker compose -f zabbix.yml up -d
+```
+```
 http://IP:8080 (Admin/zabbix)
 ```
 ```
